@@ -25,3 +25,10 @@ for FOLDER in pdfium pdfium/build pdfium/v8 pdfium/third_party/libjpeg_turbo pdf
 done
 
 gclient sync -r "origin/${PDFium_BRANCH:-main}" --no-history --shallow
+
+echo "before rename the folder"
+ls -al
+echo "rename the folder"
+mv $PWD/pdfium250901 $PWD/pdfium
+echo "after rename the folder"
+ls -al
