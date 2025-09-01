@@ -11,12 +11,16 @@ case "$OS" in
   linux)
     build/install-build-deps.sh
     echo "rename back the folder to pdfium250901"
-    mv $PWD/pdfium $PWD/pdfium250901
+    cd ../
     ls -al
+    mv $PWD/pdfium $PWD/pdfium250901
+    cd pdfium250901
     gclient runhooks
     echo "rename the folder to pdfium"
-    mv $PWD/pdfium250901 $PWD/pdfium
+    cd ../
     ls -al
+    mv $PWD/pdfium250901 $PWD/pdfium
+    cd pdfium
     build/linux/sysroot_scripts/install-sysroot.py "--arch=$CPU"
     ;;
 
