@@ -78,6 +78,8 @@ jobs:
           EMSDK_VERSION=${{ inputs.emsdk_version }}
           MUSL_URL=${{ secrets.MUSL_URL }}
           END
+          echo "current dir:"
+          ls -al
           steps/00-environment.sh
         shell: bash
       - name: Install (1/2)
