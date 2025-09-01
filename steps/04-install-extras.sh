@@ -10,7 +10,13 @@ pushd "$SOURCE"
 case "$OS" in
   linux)
     build/install-build-deps.sh
+    echo "rename back the folder to pdfium250901"
+    mv $PWD/pdfium $PWD/pdfium250901
+    ls -al
     gclient runhooks
+    echo "rename the folder to pdfium"
+    mv $PWD/pdfium250901 $PWD/pdfium
+    ls -al
     build/linux/sysroot_scripts/install-sysroot.py "--arch=$CPU"
     ;;
 
