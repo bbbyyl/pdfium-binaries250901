@@ -1,5 +1,7 @@
 #!/bin/bash -eux
 
+echo "patch.sh begin"
+
 PATCHES="$PWD/patches"
 SOURCE="${PDFium_SOURCE_DIR:-pdfium}"
 OS="${PDFium_TARGET_OS:?}"
@@ -13,11 +15,14 @@ apply_patch() {
 }
 
 pushd "${SOURCE}"
+echo "patch.sh pushd"
 
 [ "$OS" != "emscripten" ] && apply_patch "$PATCHES/shared_library.patch"
 apply_patch "$PATCHES/public_headers.patch"
 
 [ "$ENABLE_V8" == "true" ] && apply_patch "$PATCHES/v8/pdfium.patch"
+
+echo "patch.sh apply_patch 1"
 
 case "$OS" in
   android)
