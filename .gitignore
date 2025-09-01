@@ -1,0 +1,16 @@
+/*.nupkg
+/nuget/pdfium-*/
+/.env
+/.path
+/.gclient*
+/.cipd/
+/depot_tools/
+/emsdk/
+/pdfium/
+/staging/
+/build/
+*.tgz
+/*-musl*-cross/
+/android-ndk*
+/conda/out/
+/.gcs_entries
