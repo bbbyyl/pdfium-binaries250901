@@ -81,7 +81,8 @@ jobs:
           echo "current dir:"
           cd steps
           ls -al
-          chmod +x ./00-environment.sh
+          chmod +x ./*.sh
+          ls -al
           cd ../
           steps/00-environment.sh
         shell: bash
