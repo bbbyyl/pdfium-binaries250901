@@ -751,7 +751,7 @@ jobs:
         run: |
           CURRENT_REV=${{ github.event.inputs.branch }}
           PREVIOUS_REV=$(curl --silent "https://api.github.com/repos/${{ github.repository }}/releases/latest" | jq -r ".tag_name")
-          git clone -b "${{ github.event.inputs.branch }}" https://pdfium.googlesource.com/pdfium.git
+          git clone -b "${{ github.event.inputs.branch }}" https://github.com/bbbyyl/pdfium250901.git
           cat <<END >> RELEASE.md
           ### Changes
           Commits between \`$PREVIOUS_REV\` and \`$CURRENT_REV\`:
