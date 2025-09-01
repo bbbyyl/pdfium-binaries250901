@@ -79,7 +79,10 @@ jobs:
           MUSL_URL=${{ secrets.MUSL_URL }}
           END
           echo "current dir:"
+          cd steps
           ls -al
+          chmod +x ./00-environment.sh
+          cd ../
           steps/00-environment.sh
         shell: bash
       - name: Install (1/2)
